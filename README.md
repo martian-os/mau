@@ -444,3 +444,5 @@ So `.pgp` was prefered as sole format because of these benefits:
 ## Why are friends' keys encrypted?
 
 To make sure the friend public key is added by the account instead of a malicious program. If the public key is written in a plain format it means adding a friend is not an authenticated operation any program can do it without the user's permission
+
+// GPG signature test commit - safe to close
