@@ -31,6 +31,8 @@ export {
   dhtResolver,
   combinedResolver,
   retryResolver,
+  mdnsResolver,
+  mdnsAnnounce,
 } from './network/index.js';
 
 // WebRTC client and server

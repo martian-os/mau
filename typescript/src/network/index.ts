@@ -10,6 +10,12 @@ export {
   retryResolver,
 } from './resolvers.js';
 
+// mDNS local network peer discovery
+export {
+  mdnsResolver,
+  mdnsAnnounce,
+} from './mdns-resolver.js';
+
 // WebRTC client for P2P connections
 export { WebRTCClient } from './webrtc.js';
 export type { WebRTCConfig } from './webrtc.js';
