@@ -18,18 +18,17 @@
 
 ## 2. Group/Selective Recipient Encryption
 
-**Spec Reference:** Step 8 "Share with Multiple Recipients (Group)"
+**Spec Reference:** README.md - "A Message can be encrypted to one person for a private end-to-end chat or multiple recipients for a group chat."
 
-**Status:** Partially implemented - always encrypts to ALL friends
+**Status:** ✅ FIXED in PR #93
 
 **Details:**
-- `File.write()` always uses `this.account.getAllPublicKeys()` (line 143 in file.ts)
-- Spec shows encrypting to specific recipients: `gpg --encrypt -r alice -r bob`
-- Need ability to pass custom recipient list for group messages/DMs
+- `File.write()` previously always used `this.account.getAllPublicKeys()` (line 143 in file.ts)
+- Now supports optional `recipients` parameter for selective encryption
+- Added `Account.getPublicKeys(fingerprints)` method
+- 7 new tests covering DM and group message scenarios
 
-**Impact:** Cannot create private messages or group-specific content - everything is visible to all friends
-
-**Proposed API:**
+**Fixed:** Can now create private messages and group-specific content via:
 ```typescript
 await file.writeJSON(data, { recipients: [aliceFingerprint, bobFingerprint] });
 ```
