@@ -50,6 +50,12 @@ export {
 // Distributed Hash Table (DHT)
 export { KademliaDHT } from './network/index.js';
 
+// mDNS for local network discovery
+export { MauMDNS, createMDNS } from './network/index.js';
+
+// UPnP for NAT traversal
+export { createUPnPClient, mapMauServerPort } from './network/index.js';
+
 // ============================================================================
 // Type Definitions
 // ============================================================================
@@ -80,6 +86,12 @@ export type {
   WebRTCConnection,
   SignalingMessage,
 } from './network/index.js';
+
+// mDNS types
+export type { MDNSService, MDNSOptions } from './network/index.js';
+
+// UPnP types
+export type { UPnPClient, UPnPMapping } from './network/index.js';
 
 // ============================================================================
 // Error Classes

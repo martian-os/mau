@@ -33,3 +33,7 @@ export { KademliaDHT } from './dht.js';
 // mDNS for local network peer discovery
 export { MauMDNS, createMDNS } from './mdns.js';
 export type { MDNSService, MDNSOptions } from './mdns.js';
+
+// UPnP for NAT traversal
+export { createUPnPClient, mapMauServerPort } from './upnp.js';
+export type { UPnPClient, UPnPMapping } from './upnp.js';
